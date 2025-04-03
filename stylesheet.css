@@ -3,4 +3,12 @@
     padding: 0;
 }
 
+
 /* body default setting */
+.mainframe{
+    height: 250px;
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
