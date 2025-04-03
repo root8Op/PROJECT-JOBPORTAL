@@ -5,6 +5,11 @@
 
 
 /* body default setting */
+body{
+    background-image: url();
+}
+
+
 .mainframe{
     height: 250px;
     width: 250px;
