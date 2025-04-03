@@ -6,14 +6,20 @@
 
 /* body default setting */
 body{
-    background-image: url();
+    background-image: url(https://raw.githubusercontent.com/root8Op/PROJECT-JOBPORTAL/refs/heads/main/Images/pexels-minan1398-1134188.jpg);
+    background-size: cover;
 }
 
+.filter{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
 .mainframe{
     height: 250px;
     width: 250px;
-    border: 2px solid black;
+    border: 1px solid white;
     border-radius: 10px;
     font-family: 'Helvetica Neue', sans-serif;
 }
