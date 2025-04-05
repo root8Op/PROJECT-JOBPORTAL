@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-
+/* Main window's setting */
 /* body default setting */
 body{
     background-image: url(https://raw.githubusercontent.com/root8Op/PROJECT-JOBPORTAL/refs/heads/main/Images/pexels-minan1398-1134188.jpg);
@@ -14,12 +14,51 @@ body{
     height: 100vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mainframe{
     height: 250px;
-    width: 250px;
+    width: 300px;
     border: 1px solid white;
     border-radius: 10px;
     font-family: 'Helvetica Neue', sans-serif;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mainframe h1{
+    color: #ffff;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.buttons{
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    gap:20px;
+    
+}
+
+.buttons button{
+    padding: 10px;
+    width: 100px;
+    border-radius: 20px;
+    font-weight: 100;
+    font-size: x-small;
+}
+
+.btn1{
+    background-color: transparent;
+    color: #ffff;
+    border: 1.5px solid #ffff;
+}
+.btn2{
+    background-color: #ffff;
+    color: #000000;
+    border: 1.5px solid #ffff;
 }
