@@ -57,8 +57,20 @@ body{
     color: #ffff;
     border: 1.5px solid #ffff;
 }
+
+.btn1:hover{
+    background-color: #ffff;
+    color: #000000;
+}
+
+
 .btn2{
     background-color: #ffff;
     color: #000000;
     border: 1.5px solid #ffff;
+}
+
+.btn2:hover{
+    background-color: transparent;
+    color: #ffff;
 }
