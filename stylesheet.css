@@ -24,6 +24,7 @@ body{
     width: 300px;
     border: 1px solid white;
     border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
     font-family: 'Helvetica Neue', sans-serif;
     display: grid;
     justify-content: center;
@@ -59,8 +60,7 @@ body{
 }
 
 .btn1:hover{
-    background-color: #ffff;
-    color: #000000;
+    background-color: #4a4a4a;
 }
 
 
@@ -71,6 +71,6 @@ body{
 }
 
 .btn2:hover{
-    background-color: transparent;
+    background-color: #4a4a4a;
     color: #ffff;
 }
