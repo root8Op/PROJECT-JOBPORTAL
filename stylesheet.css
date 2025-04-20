@@ -21,11 +21,13 @@ body{
 
 .logo{
     position: absolute;
-    width: 200px;
     margin-bottom:500px ;
     margin-right: 950px;
 }
 
+.logo img{
+    width: 200px;
+}
 
 .mainframe{
     height: 250px;
