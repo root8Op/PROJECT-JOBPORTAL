@@ -95,10 +95,10 @@
     align-items: center;
     margin-top: 0px;
     font-family: 'Helvetica Neue', sans-serif;
-    background-color: transparent;
-    backdrop-filter: blur(5px) rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid #000000;
+    background-color: #2a759c;
+    backdrop-filter: blur(5px);
     border-radius: 0px 0px 20px 20px;
     height: 60px;
     padding: 20px;
+    color: #ffff;
 }
