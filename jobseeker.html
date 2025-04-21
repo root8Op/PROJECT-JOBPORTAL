@@ -5,9 +5,38 @@
     <meta name="viewport" initial-scale="1.0">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
     <link href="Images/looprepJOBSPH.png" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="stylesheet.css">
     <title>JobSphere</title>
 </head>
 <body>
-    <div class="logo"><a href=""><img src="Images/Projectlogo.png" alt="Jobspherelogo"></a></div>
+    <header class="heading">
+        <h1>Welcome to JobSphere</h1>
+        <p>Your gateway to finding the perfect job!</p>
+    </header>
+    <main>
+        <section class="job-search">
+            <h2>Search for Jobs</h2>
+            <form action="/search" method="GET">
+                <input type="text" name="keyword" placeholder="Job title, keywords, or company" required>
+                <input type="text" name="location" placeholder="City, state, or zip code" required>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+        <section class="job-listings">
+            <h2>Recent Job Listings</h2>
+            <ul>
+                <li><a href="#">Software Engineer at TechCorp</a></li>
+                <li><a href="#">Marketing Specialist at MarketPro</a></li>
+                <li><a href="#">Data Analyst at DataWorks</a></li>
+            </ul>
+        </section>
+        <section class="profile">
+            <h2>Your Profile</h2>
+            <p><a href="/profile">View or Edit Your Profile</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 JobSphere. All rights reserved.</p>
+    </footer>
 </body>
 </html>
