@@ -14,14 +14,7 @@
         <p>Your gateway to finding the perfect job!</p>
     </header>
     <main>
-        <section class="job-search">
-            <h2>Search for Jobs</h2>
-            <form action="/search" method="GET">
-                <input type="text" name="keyword" placeholder="Job title, keywords, or company" required>
-                <input type="text" name="location" placeholder="City, state, or zip code" required>
-                <button type="submit">Search</button>
-            </form>
-        </section>
+        <!-- job lists section -->
         <section class="job-listings">
             <h2>Recent Job Listings</h2>
             <ul>
@@ -30,6 +23,19 @@
                 <li><a href="#">Data Analyst at DataWorks</a></li>
             </ul>
         </section>
+        
+        <!-- job search section -->
+
+        <section class="job-search">
+            <div class="seprator"></div>
+            <h2>Search for Jobs</h2>
+            <form action="/search" method="GET">
+                <input type="text" name="keyword" placeholder="Job title, keywords, or company" required>
+                <input type="text" name="location" placeholder="City, state, or zip code" required>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
         <section class="profile">
             <h2>Your Profile</h2>
             <p><a href="/profile">View or Edit Your Profile</a></p>
