@@ -88,6 +88,11 @@
 
 /* job seekers page */
 
+.jobseeker{
+    background-color: #eceaff;
+}
+
+
 .heading{
     display: flex;
     flex-direction: column;
@@ -103,6 +108,13 @@
     color: #ffff;
 }
 
+.heading img{
+    width: 280px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+
 main{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -117,6 +129,7 @@ main{
     width: 1px;
     background-color: #d9d9d9;
     margin-right: 20px;
+    margin-left: 40px;
 }
 
 .job-search{
@@ -135,6 +148,7 @@ main{
 .job-search input[type="text"]{
     border-radius: 20px;
     padding-left: 10px;
+    width: 196px;
     font-size: medium;
     font-family: 'Helvetica Neue', sans-serif;
     border: 1px solid #000000;
@@ -146,5 +160,24 @@ main{
 }
 
 .job-search form{
-    padding-top: 50px;
+    padding-top: 30px;
+}
+
+
+.job-search button{
+    padding: 10px;
+    width: 70px;
+    height: 30px;
+    border : 1px solid #000000;
+    border-radius: 20px;
+    font-weight: 100;
+    font-size: x-small;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.job-search button:hover{
+    background-color: #2a759c;
+    color: #ffff;
+    border: 1px solid #ffff;
 }

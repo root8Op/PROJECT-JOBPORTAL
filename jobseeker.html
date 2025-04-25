@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="stylesheet.css">
     <title>JobSphere</title>
 </head>
-<body>
+<body class="jobseeker">
     <header class="heading">
-        <h1>Welcome to JobSphere</h1>
+        <a href=""><img src="/Images/Projectlogo.png" alt="logo" draggable="false"></a>
         <p>Your gateway to finding the perfect job!</p>
     </header>
     <main>
@@ -32,17 +32,16 @@
             <form action="/search" method="GET">
                 <input type="text" name="keyword" placeholder="Job title, keywords, or company" required>
                 <input type="text" name="location" placeholder="City, state, or zip code" required>
-                <button type="submit">Search</button>
+                <button type="submit" align="center">Search</button>
             </form>
         </section>
 
-        <section class="profile">
-            <h2>Your Profile</h2>
-            <p><a href="/profile">View or Edit Your Profile</a></p>
-        </section>
+
     </main>
     <footer>
         <p>&copy; 2023 JobSphere. All rights reserved.</p>
     </footer>
+
+<script src="index.JS"></script>
 </body>
 </html>
