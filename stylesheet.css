@@ -181,3 +181,40 @@ main{
     color: #ffff;
     border: 1px solid #ffff;
 }
+
+
+.job-listings h2{
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.job-listings ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.job-listings li{
+    background-color: #ffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.job-listings li:hover{
+    background-color: #2a759c;
+    color: #ffff;
+    cursor: pointer;
+}
+
+.job-listings li a{
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: medium;
+}
+
+.job-listings li:hover a{
+    text-decoration: underline;
+}
