@@ -3,8 +3,8 @@
     padding: 0;
 }
 
-/* Main window's setting */
-/* body default setting */
+/* <<<<<<<<<<<<<<<<<<<<Main window's setting>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* <<<<<<<<<<<<<<<<<<<<<<<<body default setting>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 .frontpage{
     background-image: url(https://raw.githubusercontent.com/root8Op/PROJECT-JOBPORTAL/refs/heads/main/Images/pexels-minan1398-1134188.jpg);
     background-size: cover;
@@ -86,7 +86,7 @@
 }
 
 
-/* job seekers page */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<job seekers page>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 .jobseeker{
     background-color: #eceaff;
@@ -107,8 +107,71 @@
     padding: 20px;
     color: #ffff;
 }
+/* <<<<<<<<<<<<<<<<<< drop down menu>>>>>>>>>>>>> */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    padding: 0 20px;
+    background-color: transparent;
+    height: fit-content;
+    color: #ffff;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: medium;
+    font-weight: 100;
+    position: fixed;
+    top: 25px;
+    right: 0;
+    z-index: 1000;
+}
 
-.heading img{
+.profile-pic{
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffff;
+    margin-right: 20px;
+    background-color: #ffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+.profile-container:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    min-width: 150px;
+}
+
+.dropdown-menu a {
+    color: #000000;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: medium;
+    font-weight: 300;
+
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.main-logo{
     width: 280px;
     height: 50px;
     margin-right: 10px;
@@ -225,3 +288,4 @@ main{
     margin-top: 5px;
     color: #999999;
 }
+

@@ -10,9 +10,22 @@
 </head>
 <body class="jobseeker">
     <header class="heading">
-        <a href="https://root8op.github.io/PROJECT-JOBPORTAL/jobseeker.html" draggable="false"><img src="Images/Projectlogo.png" alt="logo" draggable="false"></a>
+        <a href="https://root8op.github.io/PROJECT-JOBPORTAL/jobseeker.html" draggable="false"><img class="main-logo" src="Images/Projectlogo.png" alt="logo" draggable="false"></a>
         <p>Your gateway to finding the perfect job!</p>
+        
+        <nav class="navbar">
+            <div class="profile-container">
+                <img src="Images/user.png" class="profile-pic" alt="Profile Picture" onclick="toggleDropdown()">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="/profile">View Profile</a>
+                    <a href="/settings">Settings</a>
+                    <a href="/signup">Signup</a>
+                </div> 
+            </div>
+        </nav>
+
     </header>
+
     <main>
         <!-- job lists section -->
         <section class="job-listings">
