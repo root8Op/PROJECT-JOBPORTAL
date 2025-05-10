@@ -4,26 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" initial-scale="1.0">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
     <link href="Images/looprepJOBSPH.png" rel="icon" type="image/x-icon">
     <title>JobSphere</title>
 </head>
 <body>
     <header class="heading">
-        <a href="https://root8op.github.io/PROJECT-JOBPORTAL/" draggable="false"><img src="Images/Projectlogo.png" alt="logo" draggable="false"></a>
+        <a href="https://root8op.github.io/PROJECT-JOBPORTAL/" draggable="false"><img class="main-logo" src="Images/Projectlogo.png" alt="logo" draggable="false"></a>
         <p>Your gateway to finding the perfect job!</p>
-   <section class="profile">
-        <div class="profile-container">
-            <img src="Images/profile-pic.png" alt="Profile Picture" class="profile-pic" onclick="toggleDropdown()">
-            <div class="dropdown-menu" id="dropdownMenu">
-                <a href="/profile">View Profile</a>
-                <a href="/settings">Settings</a>
-                <a href="/logout">Logout</a>
-            </div>
-        </div>
-    </section>
+        <section class="navbar">
 
+            <div class="profile-container">
+                <img src="Images/user.png" alt="Profile Picture" class="profile-pic" onclick="toggleDropdown()">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="/profile">View Profile</a>
+                    <a href="/settings">Settings</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        </section>
     </header>
 
+    <!-- Recruiter Search Section -->
+    <main>
+        <section class="recruiter-search">
+            <h2>Find Suitable Candidates</h2>
+            <form action="/search-candidates" method="GET" class="search-form">
+                <label for="job-title">Job Title:</label>
+                <input type="text" id="job-title" name="jobTitle" placeholder="Enter job title" required>
 
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+                <label for="experience">Experience (in years):</label>
+                <input type="number" id="experience" name="experience" placeholder="Enter experience" min="0" required>
+
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" name="skills" placeholder="Enter required skills" required>
+
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </section>
+
+        <!-- Suggested Candidates Section -->
+        <section class="suggested-candidates">
+            <h2>Suggested Candidates</h2>
+            <div id="candidate-list">
+                <!-- Candidate cards will be dynamically inserted here -->
+                <div class="candidate-card">
+                    <h3>John Doe</h3>
+                    <p><strong>Skills:</strong> JavaScript, React, Node.js</p>
+                    <p><strong>Experience:</strong> 5 years</p>
+                    <p><strong>Location:</strong> New York</p>
+                    <button class="view-profile-button">View Profile</button>
+                </div>
+                <div class="candidate-card">
+                    <h3>Jane Smith</h3>
+                    <p><strong>Skills:</strong> Python, Django, Machine Learning</p>
+                    <p><strong>Experience:</strong> 3 years</p>
+                    <p><strong>Location:</strong> San Francisco</p>
+                    <button class="view-profile-button">View Profile</button>
+                </div>
+                <!-- More candidate cards can be added dynamically -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> JobSphere. All rights reserved.</p>
+    </footer>
+<script src="index.JS"></script>
 </body>
 </html>
