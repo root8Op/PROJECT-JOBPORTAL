@@ -212,6 +212,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: top;
+    gap: 20px;
 
 }
 
@@ -342,6 +343,14 @@ footer{
             background-color: #f9f9f9;
             
  }
+
+.recruiter-search h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: large;
+ }
+
  .search-form label {
      display: block;
      margin: 10px 0 5px;
@@ -378,6 +387,9 @@ footer{
 
   .suggested-candidates h2 {
      margin-bottom: 15px;
+     text-align: center;
+     font-family: 'Helvetica Neue', sans-serif;
+     font-size: large;
  }
 
   #candidate-list {
