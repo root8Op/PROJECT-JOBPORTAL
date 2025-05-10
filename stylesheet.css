@@ -244,12 +244,12 @@ main{
 .job-search button{
     padding: 10px;
     width: 70px;
-    height: 30px;
+    height: 32px;
     border : 1px solid #000000;
-    border-radius: 20px;
+    border-radius: 2px;
     font-weight: 100;
     font-size: x-small;
-    margin-left: 0px;
+    margin-left: 10px;
     text-align: center;
 }
 .job-search button:focus{
@@ -351,6 +351,13 @@ footer{
             font-size: large;
  }
 
+.search-form {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Helvetica Neue', sans-serif;
+            margin-bottom: 20px;
+ }
+
  .search-form label {
      display: block;
      margin: 10px 0 5px;
@@ -366,7 +373,7 @@ footer{
 
   .search-button {
      padding: 10px 20px;
-     background-color: #007bff;
+     background-color: #2a759c;
      color: white;
      border: none;
      border-radius: 4px;
@@ -374,7 +381,7 @@ footer{
  }
 
   .search-button:hover {
-     background-color: #0056b3;
+     color: #000000;
  }
 
   .suggested-candidates {
@@ -403,7 +410,9 @@ footer{
      border-radius: 8px;
      padding: 15px;
      background-color: #fff;
-     width: calc(33.333% - 10px);
+     width: 600px;
+     font-family: 'Helvetica Neue', sans-serif;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
      box-sizing: border-box;
  }
 
@@ -414,3 +423,62 @@ footer{
   .candidate-card p {
      margin: 5px 0;
  }
+
+ .candidate-card button {
+     padding: 8px 12px;
+     background-color: #2a759c;
+     color: white;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+
+    .candidate-card button:hover {
+        color: #000000;
+    }
+
+/* Recent Searches Section */
+.recent-searches {
+    margin-top: 40px;
+    position: absolute;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    height: 200px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.recent-searches h2 {
+    font-size: large;
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+    color: #2a759c;
+}
+
+.recent-searches ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.recent-searches li {
+    margin-bottom: 10px;
+}
+
+.recent-searches li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: medium;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+.recent-searches li a:hover {
+    color: #2a759c;
+    text-decoration: underline;
+}
