@@ -35,29 +35,3 @@ function toggleDropdown() {
 // Year changing automation for copyright
 var currentYear = new Date().getFullYear();
 document.getElementById("current-year").innerHTML = currentYear;
-
-// job filtering functionality
-// This function filters job listings based on user input
-
-function filterJobs() {
-    const keywordInput = document.querySelector('input[name="keyword"]').value.toLowerCase();
-    const locationInput = document.querySelector('input[name="location"]').value.toLowerCase();
-    const jobListings = document.querySelectorAll('.job-listings li');
-
-    jobListings.forEach(job => {
-        const jobLocation = job.getAttribute('data-location').toLowerCase();
-        const jobTitle = job.querySelector('a').textContent.toLowerCase();
-
-        if (jobTitle.includes(keywordInput) && jobLocation.includes(locationInput)) {
-            job.style.display = 'block';
-        } else {
-            job.style.display = 'none';
-        }
-    });
-}
-
-// Attach the filterJobs function to the search form
-document.querySelector('.job-search form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-    filterJobs();
-});
