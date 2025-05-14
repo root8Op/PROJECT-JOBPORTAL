@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" initial-scale="1.0">
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+    <link href="Images/looprepJOBSPH.png" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>JobSphere</title>
+</head>
+<body class="jobseeker">
+     <header class="heading">
+            <a href="https://root8op.github.io/PROJECT-JOBPORTAL/index.html" draggable="false"><img class="main-logo" src="Images/Projectlogo.png" alt="logo" draggable="false"></a>
+            <p>Your gateway to finding the perfect job!</p>
+        
+            <section class="optionpanel">
+                <div class="optionpanel-container">
+                    <img src="Images/user.png" class="optionpanel-pic" alt="Profile Picture" onclick="toggleDropdown()">
+                    <div class="optionpanel-menu" id="dropdownMenu">
+                        <a href="/profile">View Profile</a>
+                        <a href="/settings">Settings</a>
+                        <a href="/signup">Signup/login</a>
+                    </div> 
+                </div>
+            </section>
+        </header>
+    <main class="searching-results">
+        <h1>Search Results</h1>
+        <section class="search-results">
+            <h2 id="results-title"></h2>
+            <ul id="results-list"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> JobSphere. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to display the current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Example job data
+        const searchResults = [
+            { id: 1, title: 'Software Engineer', company: 'TechCorp' },
+            { id: 2, title: 'Marketing Specialist', company: 'MarketPro' },
+            { id: 3, title: 'Data Analyst', company: 'DataWorks' }
+        ];
+
+        // Get keyword from URL
+        const params = new URLSearchParams(window.location.search);
+        const keyword = (params.get('keyword') || '').toLowerCase();
+
+        // Filter jobs by keyword
+        const filteredResults = searchResults.filter(job =>
+            job.title.toLowerCase().includes(keyword) ||
+            job.company.toLowerCase().includes(keyword)
+        );
+
+        // Function to display search results
+        function displaySearchResults(results) {
+            const resultsTitle = document.getElementById('results-title');
+            const resultsList = document.getElementById('results-list');
+            resultsList.innerHTML = '';
+
+            if (!keyword) {
+                resultsTitle.textContent = 'Please enter a search keyword.';
+                return;
+            }
+
+            if (results.length === 0) {
+                resultsTitle.textContent = `No results found for "${keyword}"`;
+                return;
+            }
+
+            resultsTitle.textContent = `Found ${results.length} result(s) for "${keyword}"`;
+            results.forEach(job => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<a href="job-details.html?id=${job.id}">${job.title} at ${job.company}</a>`;
+                resultsList.appendChild(listItem);
+            });
+        }
+
+        // Display the filtered search results
+        displaySearchResults(filteredResults);
+    </script>
+</body>
+</html>

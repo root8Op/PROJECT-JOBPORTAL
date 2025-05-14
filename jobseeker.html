@@ -30,21 +30,21 @@
         <!-- job lists section -->
         <section class="job-listings">
             <h2>Recent Job Listings</h2>
-            <ul>
+            <ul id="job-list">
                 <li data-id="1"> 
-                    <a href="#" class="job-link"><span id="company-logo"><img src="/Images/user.png" alt="" type="image/x-icon"></span>Software Engineer at TechCorp</a>
+                    <a href="#" draggable="false" class="job-link"><span id="company-logo"><img src="/Images/user.png" draggable="false" type="image/x-icon"></span>Software Engineer at TechCorp</a>
                     <p>Location: San Francisco, CA</p>
                     <p>Experience: 3+ years</p>
                     <p>Salary: $120,000 - $140,000</p>
                 </li>
                 <li data-id="2">
-                    <a href="#" class="job-link"><img src="/Images/user.png" alt="" type="image/x-icon">Marketing Specialist at MarketPro</a>
+                    <a href="#" draggable="false" class="job-link"><img src="/Images/user.png" draggable="false" type="image/x-icon">Marketing Specialist at MarketPro</a>
                     <p>Location: New York, NY</p>
                     <p>Experience: 2+ years</p>
                     <p>Salary: $60,000 - $80,000</p>
                 </li>
                 <li data-id="3">
-                    <a href="#" class="job-link"><img src="/Images/user.png" alt="" type="image/x-icon">Data Analyst at DataWorks</a>
+                    <a href="#" draggable="false" class="job-link"><img src="/Images/user.png" draggable="false" type="image/x-icon">Data Analyst at DataWorks</a>
                     <p>Location: Austin, TX</p>
                     <p>Experience: 1+ years</p>
                     <p>Salary: $70,000 - $90,000</p>
@@ -57,19 +57,19 @@
         <section class="job-search">
             <div class="seprator"></div>
             <h2>Search for Jobs</h2>
-            <form action="/search" method="GET">
-                <input type="text" name="keyword" placeholder="Job title, keywords, or company" required>
-                <button type="submit" align="center">Search</button>
-            <!-- recent searches section -->   
-                <section class="recent-searches">
-                    <h2>Recent Searches</h2>
-                    <ul>
-                        <li><a href="/search?keyword=Software+Engineer">Software Engineer</a></li>
-                        <li><a href="/search?keyword=Marketing+Specialist">Marketing Specialist</a></li>
-                        <li><a href="/search?keyword=Data+Analyst">Data Analyst</a></li>
-                    </ul>
-                </section>  
+            <form id="job-search-form" action="/search-result.html" method="GET">
+                <input id="job-search-input" type="text" name="keyword" placeholder="Job title, keywords, or company" required>
+                <button type="search" align="center">Search</button>
             </form>
+            <!-- recent searches section -->   
+            <div class="recent-searches">
+                <h2>Recent Searches</h2>
+                <ul>
+                    <li><a href="#">Software Engineer</a></li>
+                    <li><a href="#">Marketing Specialist</a></li>
+                    <li><a href="#">Data Analyst</a></li>
+                </ul>
+            </div>  
         </section>
 
         

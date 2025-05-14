@@ -212,7 +212,8 @@ main{
     display: flex;
     justify-content: center;
     align-items: top;
-    gap: 20px;
+    margin-top: 0px;
+    font-family: 'Helvetica Neue', sans-serif;
 
 }
 
@@ -452,8 +453,9 @@ footer{
 
 /* Recent Searches Section */
 .recent-searches {
-    margin-top: 40px;
     position: absolute;
+    z-index: 1;
+    top: 300px;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
@@ -592,6 +594,7 @@ footer{
 .job-details{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     font-family: 'Helvetica Neue', sans-serif;
     background-color: #ffffff;
     height: max-content;
@@ -616,3 +619,73 @@ footer{
     height: 50px;
     border-radius: 50%;
 }
+
+.job-details button{
+    padding: 10px;
+    width: 100px;
+    height: 32px;
+    border : 1px solid #000000;
+    border-radius: 2px;
+    font-weight: 100;
+    font-size: x-small;
+    margin-left: 500px;
+    text-align: center;
+}
+
+.job-details button:focus{
+    outline: none;
+    border: 1px solid #2a759c;
+    background-color: #2a759c;
+    color: #ffff;
+}
+.job-details button:hover{
+    background-color: #2a759c;
+    color: #ffff;
+    border: 1px solid #ffff;
+}
+.job-details p{
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: small;
+    margin-top: 5px;
+}
+
+.job-details ul{
+    list-style-type: none;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: small;
+    padding: 0;
+}
+
+
+/* search result css */
+
+.search-results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #ffffff;
+    height: max-content;
+    backdrop-filter: blur(5px);
+    border-radius: 10px 20px 10px 20px;
+    padding: 20px;
+    color: #000000;
+}
+
+.searching-results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #ffffff;
+    height: max-content;
+    backdrop-filter: blur(5px);
+    border-radius: 10px 20px 10px 20px;
+    padding: 20px;
+    color: #000000;
+}
+
+.search-results h2{
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
