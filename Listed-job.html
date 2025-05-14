@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Images/looprepJOBSPH.png" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>JobSphere</title>
+
+</head>
+<body class="jobseeker">
+        <header class="heading">
+            <a href="https://root8op.github.io/PROJECT-JOBPORTAL/index.html" draggable="false"><img class="main-logo" src="Images/Projectlogo.png" alt="logo" draggable="false"></a>
+            <p>Your gateway to finding the perfect job!</p>
+        
+            <section class="optionpanel">
+                <div class="optionpanel-container">
+                    <img src="Images/user.png" class="optionpanel-pic" alt="Profile Picture" onclick="toggleDropdown()">
+                    <div class="optionpanel-menu" id="dropdownMenu">
+                        <a href="/profile">View Profile</a>
+                        <a href="/settings">Settings</a>
+                        <a href="/signup">Signup/login</a>
+                    </div> 
+                </div>
+            </section>
+        </header>
+        <main class="listsofjobs">
+        <h1><span>Job</span> Details</h1>
+        <div id="job-details">
+            
+            <!-- Job details will be dynamically inserted here -->
+        </div>
+        </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> JobSphere. All rights reserved.</p>
+    </footer>
+    <script src="index.JS"></script>
+</body>
+</html>

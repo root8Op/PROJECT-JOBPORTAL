@@ -288,10 +288,14 @@ main{
 }
 
 .job-listings li{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
     background-color: #ffff;
     border-radius: 10px;
     padding: 10px;
-    height: 80px;
+    height: 140px;
     width: 600px;
     margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -309,14 +313,18 @@ main{
     font-size: medium;
 }
 
-.job-listings li:hover a{
-    text-decoration: underline;
-}
 .job-listings li p{
     font-family: 'Helvetica Neue', sans-serif;
     font-size: small;
     margin-top: 5px;
     color: #999999;
+}
+
+.job-listings li img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 
@@ -481,4 +489,97 @@ footer{
 .recent-searches li a:hover {
     color: #2a759c;
     text-decoration: underline;
+}
+
+
+.optionpanel{
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    font-family: 'Helvetica Neue', sans-serif;
+    border-radius: 0px 0px 20px 20px;
+    height: 60px;
+    padding: 20px;
+    color: #ffff;
+}
+
+.optionpanel-container{
+    position: relative;
+    display: inline-block;
+}
+
+.optionpanel .optionpanel-container:hover .optionpanel-menu {
+    display: block;
+}
+
+.optionpanel-pic{
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffff;
+    margin-right: 20px;
+    background-color: #ffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.optionpanel-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    min-width: 150px;
+}
+
+.optionpanel-menu a {
+    color: #000000;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: medium;
+    font-weight: 300;
+
+}
+.optionpanel-menu a:hover {
+    background-color: #f1f1f1;
+}
+.optionpanel-menu a:active {
+    background-color: #2a759c;
+    color: #ffff;
+}
+.optionpanel-menu a:focus {
+    background-color: #2a759c;
+    color: #ffff;
+}
+
+.listsofjobs h1{
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    top: 0;
+}
+
+.listsofjobs h1 span{
+    color: #2a759c;
+}
+
+.listsofjobs{
+    display: flex;
+    flex-direction: column;
+    top: 0px;
+    font-family: 'Helvetica Neue', sans-serif;
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 20px 20px;
+    padding: 20px;
+    color: #000000;
 }
