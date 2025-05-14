@@ -53,25 +53,45 @@ document.querySelectorAll('.job-link').forEach(link => {
         // Mock job data
         const jobs = {
             1: {
+                Image: "/images/user.png",
                 title: "Software Engineer at TechCorp",
                 location: "San Francisco, CA",
                 experience: "3+ years",
                 salary: "$120,000 - $140,000",
-                description: "Develop and maintain software applications."
+                description: "Develop and maintain software applications.",
+                requirements: [
+                    "Bachelor's degree in Computer Science or related field",
+                    "Proficiency in JavaScript, HTML, CSS",
+                    "Experience with React or Angular",
+                    "Strong problem-solving skills",
+                    "Excellent communication skills"
+                ]
             },
             2: {
                 title: "Marketing Specialist at MarketPro",
                 location: "New York, NY",
                 experience: "2+ years",
                 salary: "$60,000 - $80,000",
-                description: "Plan and execute marketing campaigns."
+                description: "Plan and execute marketing campaigns.",
+                requirements: [
+                    "Bachelor's degree in Marketing or related field",
+                    "Experience with digital marketing tools",
+                    "Strong analytical skills",
+                    "Creativity and attention to detail"
+                ]
             },
             3: {
                 title: "Data Analyst at DataWorks",
                 location: "Austin, TX",
                 experience: "1+ years",
                 salary: "$70,000 - $90,000",
-                description: "Analyze and interpret complex data sets."
+                description: "Analyze and interpret complex data sets.",
+                requirements: [
+                    "Bachelor's degree in Statistics, Mathematics, or related field",
+                    "Proficiency in SQL and Excel",
+                    "Experience with data visualization tools",
+                    "Strong attention to detail"
+                ]
             }
         };
 
@@ -79,11 +99,16 @@ document.querySelectorAll('.job-link').forEach(link => {
         const jobDetails = jobs[jobId];
         if (jobDetails) {
             document.getElementById('job-details').innerHTML = `
-                <h2>${jobDetails.title}</h2>
+                
+                <h2><img src="${jobDetails.Image || '/images/user.png'}" alt="Company Logo" class="company-logo">${jobDetails.title}</h2>
                 <p><strong>Location:</strong> ${jobDetails.location}</p>
                 <p><strong>Experience:</strong> ${jobDetails.experience}</p>
                 <p><strong>Salary:</strong> ${jobDetails.salary}</p>
                 <p><strong>Description:</strong> ${jobDetails.description}</p>
+                <p><strong>Requirements:</strong></p>
+                <ul>
+                    ${(jobDetails.requirements || []).map(req => `<li>${req}</li>`).join('')}
+                </ul>
             `;
         } else {
             document.getElementById('job-details').innerHTML = `<p>Job not found.</p>`;

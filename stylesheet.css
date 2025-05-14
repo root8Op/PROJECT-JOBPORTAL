@@ -307,11 +307,16 @@ main{
 }
 
 .job-listings li a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     text-decoration: none;
     color: #000000;
     font-family: 'Helvetica Neue', sans-serif;
     font-size: medium;
 }
+
+
 
 .job-listings li p{
     font-family: 'Helvetica Neue', sans-serif;
@@ -582,4 +587,32 @@ footer{
     border-radius: 0px 0px 20px 20px;
     padding: 20px;
     color: #000000;
+}
+
+.job-details{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #ffffff;
+    height: max-content;
+    backdrop-filter: blur(5px);
+    border-radius: 10px 20px 10px 20px;
+    padding: 20px;
+    color: #000000;
+}
+
+.job-details h2{
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 80px;
+    top: 50px;
+    text-align: center;
+}
+
+.job-details img{
+    position: absolute;
+    top: 10px;
+    left: 320px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
