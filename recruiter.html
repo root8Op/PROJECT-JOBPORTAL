@@ -19,8 +19,8 @@
                 <img src="Images/user.png" alt="Profile Picture" class="profile-pic" onclick="toggleDropdown()">
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="/profile.html">View Profile</a>
-                    <a href="/settings">Settings</a>
-                    <a href="/logout">Logout</a>
+                    <a href="/settings.html">Settings</a>
+                    <a href="/login.html">Logout</a>
                 </div>
             </div>
         </section>
@@ -89,48 +89,82 @@ const candidates = [
 ];
 
 // Render candidate cards
-const candidateList = document.getElementById('candidate-list');
-candidateList.innerHTML = '';
-candidates.forEach((candidate, idx) => {
-    const card = document.createElement('div');
-    card.className = 'candidate-card';
-    card.innerHTML = `
-        <img src="${candidate.image}" alt="${candidate.name}" style="width:60px;height:60px;border-radius:50%;margin-bottom:10px;">
-        <h3>${candidate.name}</h3>
-        <p><strong>Skills:</strong> ${candidate.skills}</p>
-        <p><strong>Experience:</strong> ${candidate.experience}</p>
-        <p><strong>Location:</strong> ${candidate.location}</p>
-        <button class="view-profile-button" data-idx="${idx}">View Profile</button>
-    `;
-    candidateList.appendChild(card);
-});
+function renderCandidates(list) {
+    const candidateList = document.getElementById('candidate-list');
+    candidateList.innerHTML = '';
+    document.getElementById('candidate-profile').style.display = 'none';
 
-// Show profile on button click
-document.querySelectorAll('.view-profile-button').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const idx = this.getAttribute('data-idx');
-        const c = candidates[idx];
-        const profile = document.getElementById('candidate-profile');
-        profile.style.display = 'block';
-        profile.innerHTML = `
-            <div class="candidate-profile-card" style="background:#fff;padding:24px;border-radius:10px;box-shadow:0 2px 8px rgba(42,117,156,0.10);margin-bottom:16px;">
-                <div style="display:flex;align-items:center;gap:20px;">
-                    <img src="${c.image}" alt="${c.name}" style="width:80px;height:80px;border-radius:50%;">
-                    <div>
-                        <h2 style="margin:0;">${c.name}</h2>
-                        <p style="margin:4px 0;"><strong>Location:</strong> ${c.location}</p>
-                        <p style="margin:4px 0;"><strong>Experience:</strong> ${c.experience}</p>
-                        <p style="margin:4px 0;"><strong>Skills:</strong> ${c.skills}</p>
-                        <p style="margin:4px 0;"><strong>Email:</strong> ${c.email}</p>
-                        <p style="margin:4px 0;"><strong>Phone:</strong> ${c.phone}</p>
-                    </div>
-                </div>
-                <p style="margin-top:16px;">${c.bio}</p>
-                <button onclick="document.getElementById('candidate-profile').style.display='none';" style="margin-top:10px;background:#2a759c;color:#fff;border:none;padding:8px 16px;border-radius:5px;cursor:pointer;">Close Profile</button>
-            </div>
+    if (list.length === 0) {
+        candidateList.innerHTML = `<div style="padding:30px;text-align:center;width:100%;">No candidate found.</div>`;
+        return;
+    }
+
+    list.forEach((candidate, idx) => {
+        const card = document.createElement('div');
+        card.className = 'candidate-card';
+        card.innerHTML = `
+            <img src="${candidate.image}" alt="${candidate.name}" style="width:60px;height:60px;border-radius:50%;margin-bottom:10px;">
+            <h3>${candidate.name}</h3>
+            <p><strong>Skills:</strong> ${candidate.skills}</p>
+            <p><strong>Experience:</strong> ${candidate.experience}</p>
+            <p><strong>Location:</strong> ${candidate.location}</p>
+            <button class="view-profile-button" data-idx="${idx}">View Profile</button>
         `;
-        window.scrollTo({ top: profile.offsetTop - 60, behavior: 'smooth' });
+        candidateList.appendChild(card);
     });
+
+    // Attach profile view handlers
+    document.querySelectorAll('.view-profile-button').forEach((btn, i) => {
+        btn.addEventListener('click', function() {
+            const c = list[i];
+            const profile = document.getElementById('candidate-profile');
+            profile.style.display = 'block';
+            profile.innerHTML = `
+                <div class="candidate-profile-card" style="background:#fff;padding:24px;border-radius:10px;box-shadow:0 2px 8px rgba(42,117,156,0.10);margin-bottom:16px;">
+                    <div style="display:flex;align-items:center;gap:20px;">
+                        <img src="${c.image}" alt="${c.name}" style="width:80px;height:80px;border-radius:50%;">
+                        <div>
+                            <h2 style="margin:0;">${c.name}</h2>
+                            <p style="margin:4px 0;"><strong>Location:</strong> ${c.location}</p>
+                            <p style="margin:4px 0;"><strong>Experience:</strong> ${c.experience}</p>
+                            <p style="margin:4px 0;"><strong>Skills:</strong> ${c.skills}</p>
+                            <p style="margin:4px 0;"><strong>Email:</strong> ${c.email}</p>
+                            <p style="margin:4px 0;"><strong>Phone:</strong> ${c.phone}</p>
+                        </div>
+                    </div>
+                    <p style="margin-top:16px;">${c.bio}</p>
+                    <button onclick="document.getElementById('candidate-profile').style.display='none';" style="margin-top:10px;background:#2a759c;color:#fff;border:none;padding:8px 16px;border-radius:5px;cursor:pointer;">Close Profile</button>
+                </div>
+            `;
+            window.scrollTo({ top: profile.offsetTop - 60, behavior: 'smooth' });
+        });
+    });
+}
+
+// Initial render
+renderCandidates(candidates);
+
+// Search form functionality
+document.querySelector('.search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('candidate-profile').style.display = 'none';
+
+    const jobTitle = document.getElementById('job-title').value.trim().toLowerCase();
+    const location = document.getElementById('location').value.trim().toLowerCase();
+    const experience = parseInt(document.getElementById('experience').value.trim(), 10);
+    const skills = document.getElementById('skills').value.trim().toLowerCase();
+
+    // Filter candidates
+    const filtered = candidates.filter(c => {
+        const matchTitle = jobTitle === "" || c.skills.toLowerCase().includes(jobTitle);
+        const matchLocation = location === "" || c.location.toLowerCase().includes(location);
+        const candidateExp = parseInt(c.experience);
+        const matchExperience = isNaN(experience) || candidateExp >= experience;
+        const matchSkills = skills === "" || c.skills.toLowerCase().includes(skills);
+        return matchTitle && matchLocation && matchExperience && matchSkills;
+    });
+
+    renderCandidates(filtered);
 });
 </script>
 </body>
