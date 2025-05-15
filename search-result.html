@@ -73,7 +73,7 @@
             resultsTitle.textContent = `Found ${results.length} result(s) for "${keyword}"`;
             results.forEach(job => {
                 const listItem = document.createElement('li');
-                listItem.innerHTML = `<a href="job-details.html?id=${job.id}">${job.title} at ${job.company}</a>`;
+                listItem.innerHTML = `<a href="Listed-job.html?jobId=${job.id}">${job.title} at ${job.company}</a>`;
                 resultsList.appendChild(listItem);
             });
         }

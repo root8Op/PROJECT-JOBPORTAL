@@ -18,7 +18,7 @@
             <div class="profile-container">
                 <img src="Images/user.png" alt="Profile Picture" class="profile-pic" onclick="toggleDropdown()">
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="/profile">View Profile</a>
+                    <a href="/profile.html">View Profile</a>
                     <a href="/settings">Settings</a>
                     <a href="/logout">Logout</a>
                 </div>
@@ -50,23 +50,10 @@
         <!-- Suggested Candidates Section -->
         <section class="suggested-candidates">
             <h2>Suggested Candidates</h2>
+            <!-- Profile display area -->
+            <div id="candidate-profile" style="display:none; margin-bottom:24px;"></div>
             <div id="candidate-list">
                 <!-- Candidate cards will be dynamically inserted here -->
-                <div class="candidate-card">
-                    <h3>John Doe</h3>
-                    <p><strong>Skills:</strong> JavaScript, React, Node.js</p>
-                    <p><strong>Experience:</strong> 5 years</p>
-                    <p><strong>Location:</strong> New York</p>
-                    <button class="view-profile-button">View Profile</button>
-                </div>
-                <div class="candidate-card">
-                    <h3>Jane Smith</h3>
-                    <p><strong>Skills:</strong> Python, Django, Machine Learning</p>
-                    <p><strong>Experience:</strong> 3 years</p>
-                    <p><strong>Location:</strong> San Francisco</p>
-                    <button class="view-profile-button">View Profile</button>
-                </div>
-                <!-- More candidate cards can be added dynamically -->
             </div>
         </section>
     </main>
@@ -74,5 +61,77 @@
         <p>&copy; <span id="current-year"></span> JobSphere. All rights reserved.</p>
     </footer>
 <script src="index.JS"></script>
+<script>
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Example candidate data
+const candidates = [
+    {
+        name: "John Doe",
+        skills: "JavaScript, React, Node.js",
+        experience: "5 years",
+        location: "New York",
+        bio: "A passionate full-stack developer with a knack for building scalable web applications.",
+        email: "john.doe@email.com",
+        phone: "555-1234",
+        image: "Images/user.png"
+    },
+    {
+        name: "Jane Smith",
+        skills: "Python, Django, Machine Learning",
+        experience: "3 years",
+        location: "San Francisco",
+        bio: "Machine learning enthusiast and backend developer with a strong foundation in Python.",
+        email: "jane.smith@email.com",
+        phone: "555-5678",
+        image: "Images/user.png"
+    }
+];
+
+// Render candidate cards
+const candidateList = document.getElementById('candidate-list');
+candidateList.innerHTML = '';
+candidates.forEach((candidate, idx) => {
+    const card = document.createElement('div');
+    card.className = 'candidate-card';
+    card.innerHTML = `
+        <img src="${candidate.image}" alt="${candidate.name}" style="width:60px;height:60px;border-radius:50%;margin-bottom:10px;">
+        <h3>${candidate.name}</h3>
+        <p><strong>Skills:</strong> ${candidate.skills}</p>
+        <p><strong>Experience:</strong> ${candidate.experience}</p>
+        <p><strong>Location:</strong> ${candidate.location}</p>
+        <button class="view-profile-button" data-idx="${idx}">View Profile</button>
+    `;
+    candidateList.appendChild(card);
+});
+
+// Show profile on button click
+document.querySelectorAll('.view-profile-button').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const idx = this.getAttribute('data-idx');
+        const c = candidates[idx];
+        const profile = document.getElementById('candidate-profile');
+        profile.style.display = 'block';
+        profile.innerHTML = `
+            <div class="candidate-profile-card" style="background:#fff;padding:24px;border-radius:10px;box-shadow:0 2px 8px rgba(42,117,156,0.10);margin-bottom:16px;">
+                <div style="display:flex;align-items:center;gap:20px;">
+                    <img src="${c.image}" alt="${c.name}" style="width:80px;height:80px;border-radius:50%;">
+                    <div>
+                        <h2 style="margin:0;">${c.name}</h2>
+                        <p style="margin:4px 0;"><strong>Location:</strong> ${c.location}</p>
+                        <p style="margin:4px 0;"><strong>Experience:</strong> ${c.experience}</p>
+                        <p style="margin:4px 0;"><strong>Skills:</strong> ${c.skills}</p>
+                        <p style="margin:4px 0;"><strong>Email:</strong> ${c.email}</p>
+                        <p style="margin:4px 0;"><strong>Phone:</strong> ${c.phone}</p>
+                    </div>
+                </div>
+                <p style="margin-top:16px;">${c.bio}</p>
+                <button onclick="document.getElementById('candidate-profile').style.display='none';" style="margin-top:10px;background:#2a759c;color:#fff;border:none;padding:8px 16px;border-radius:5px;cursor:pointer;">Close Profile</button>
+            </div>
+        `;
+        window.scrollTo({ top: profile.offsetTop - 60, behavior: 'smooth' });
+    });
+});
+</script>
 </body>
 </html>

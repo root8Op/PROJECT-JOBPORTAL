@@ -17,9 +17,9 @@
             <div class="profile-container">
                 <img src="Images/user.png" class="profile-pic" alt="Profile Picture" onclick="toggleDropdown()">
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="/profile">View Profile</a>
-                    <a href="/settings">Settings</a>
-                    <a href="/signup">Signup/login</a>
+                    <a href="/profile.html">View Profile</a>
+                    <a href="/settings.html">Settings</a>
+                    <a href="/login.html">Signup/login</a>
                 </div> 
             </div>
         </section>
@@ -81,5 +81,34 @@
     </footer>
 
 <script src="index.JS"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Job data for matching
+    const jobs = [
+        { id: 1, title: 'Software Engineer' },
+        { id: 2, title: 'Marketing Specialist' },
+        { id: 3, title: 'Data Analyst' }
+    ];
+
+    // Handle recent searches click
+    document.querySelectorAll('.recent-searches a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const keyword = this.textContent.trim();
+            // Try to find a matching job
+            const job = jobs.find(j => j.title.toLowerCase() === keyword.toLowerCase());
+            if (job) {
+                // Redirect to job details if found
+                window.location.href = `Listed-job.html?jobId=${job.id}`;
+            } else {
+                // Otherwise, submit the search form with the keyword
+                const input = document.getElementById('job-search-input');
+                input.value = keyword;
+                document.getElementById('job-search-form').submit();
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
