@@ -733,65 +733,70 @@ footer{
 
 
 
-        .login-container {
-            max-width: 400px;
-            margin: 60px auto;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(42,117,156,0.10);
-            padding: 32px 28px;
-        }
-        .tab-btns {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-        .tab-btns button {
-            flex: 1;
-            padding: 10px 0;
-            border: none;
-            background: #eceaff;
-            color: #2a759c;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 8px 8px 0 0;
-            transition: background 0.2s;
-        }
-        .tab-btns button.active {
-            background: #2a759c;
-            color: #fff;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .login-container input[type="text"],
-        .login-container input[type="email"],
-        .login-container input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0 18px 0;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-        .login-container button[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background: #2a759c;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 8px;
-        }
-        .login-container button[type="submit"]:hover {
-            background: #17506b;
-        }
-        .login-container .msg {
-            color: #2a759c;
-            text-align: center;
-            margin-bottom: 10px;
-        }
+ .login-container {
+     max-width: 400px;
+     margin: 60px auto;
+     background: #fff;
+     border-radius: 12px;
+     box-shadow: 0 2px 12px rgba(42,117,156,0.10);
+     padding: 32px 28px;
+ }
+ .tab-btns {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 24px;
+ }
+ .tab-btns button {
+     flex: 1;
+     padding: 10px 0;
+     border: none;
+     background: #eceaff;
+     color: #2a759c;
+     font-weight: 600;
+     cursor: pointer;
+     border-radius: 8px 8px 0 0;
+     transition: background 0.2s;
+ }
+ .tab-btns button.active {
+     background: #2a759c;
+     color: #fff;
+ }
+ .tab-content {
+     display: none;
+ }
+ .tab-content.active {
+     display: block;
+ }
+ .login-container input[type="text"],
+ .login-container input[type="email"],
+ .login-container input[type="password"] {
+     width: 100%;
+     padding: 10px;
+     margin: 10px 0 18px 0;
+     border: 1px solid #ccc;
+     border-radius: 6px;
+ }
+ .login-container button[type="submit"] {
+     width: 100%;
+     padding: 10px;
+     background: #2a759c;
+     color: #fff;
+     border: none;
+     border-radius: 6px;
+     font-weight: 600;
+     cursor: pointer;
+     margin-top: 8px;
+ }
+ .login-container button[type="submit"]:hover {
+     background: #17506b;
+ }
+ .login-container .msg {
+     color: #2a759c;
+     text-align: center;
+     margin-bottom: 10px;
+ }
+
+ .profile-card img{  
+    height: 100px;
+    width: 100px;
+ }
