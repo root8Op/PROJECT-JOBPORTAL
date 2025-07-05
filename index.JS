@@ -52,7 +52,7 @@ const jobId = urlParams.get('jobId');
 // Mock job data
 const jobs = {
 1: {
-    Image: "/images/user.png",
+    Image: "images/user.png",
     title: "Software Engineer at TechCorp",
     location: "San Francisco, CA",
     experience: "3+ years",
@@ -67,7 +67,7 @@ const jobs = {
     ]
 },
 2: {
-    Image: "/images/user.png",
+    Image: "images/user.png",
     title: "Marketing Specialist at MarketPro",
     location: "New York, NY",
     experience: "2+ years",
@@ -81,7 +81,7 @@ const jobs = {
     ]
 },
 3: {
-    Image: "/images/user.png",
+    Image: "images/user.png",
     title: "Data Analyst at DataWorks",
     location: "Austin, TX",
     experience: "1+ years",
@@ -101,7 +101,7 @@ const jobDetails = jobs[jobId];
 if (jobDetails) {
     document.getElementById('job-details').innerHTML = `
         
-        <h2><img src="${jobDetails.Image || '/images/user.png'}" alt="Company Logo" class="company-logo">${jobDetails.title}</h2>
+        <h2><img src="${jobDetails.Image || 'images/user.png'}" alt="Company Logo" class="company-logo">${jobDetails.title}</h2>
         <p><strong>Location:</strong> ${jobDetails.location}</p>
         <p><strong>Experience:</strong> ${jobDetails.experience}</p>
         <p><strong>Salary:</strong> ${jobDetails.salary}</p>
